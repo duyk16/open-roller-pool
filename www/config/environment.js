@@ -15,15 +15,15 @@ module.exports = function(environment) {
 
     APP: {
       // API host and port
-      ApiUrl: '//roller.cryptopools.info/',
+      ApiUrl: '//35.204.73.156:8080/',
       PoolName: 'ROLLER Pool',
-      CompanyName: 'CryptoPools.info',
+      CompanyName: '35.204.73.156',
       // HTTP mining endpoint
-      HttpHost: 'https://roller.cryptopools.info',
+      HttpHost: '35.204.73.156',
       HttpPort: 9882,
 
       // Stratum mining endpoint
-      StratumHost: 'roller.cryptopools.info',
+      StratumHost: '35.204.73.156',
       StratumPort: 9002,
 
       // Fee and payout details
