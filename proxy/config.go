@@ -1,10 +1,10 @@
 package proxy
 
 import (
-	"github.com/chainkorea/open-callisto-pool/api"
-	"github.com/chainkorea/open-callisto-pool/payouts"
-	"github.com/chainkorea/open-callisto-pool/policy"
-	"github.com/chainkorea/open-callisto-pool/storage"
+	"github.com/duyk16/open-roller-pool/api"
+	"github.com/duyk16/open-roller-pool/payouts"
+	"github.com/duyk16/open-roller-pool/policy"
+	"github.com/duyk16/open-roller-pool/storage"
 )
 
 type Config struct {

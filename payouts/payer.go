@@ -7,14 +7,14 @@ import (
 	"os"
 	"os/exec"
 	"strconv"
-	"time"
 	"sync"
+	"time"
 
 	"github.com/ethereum/go-ethereum/common/hexutil"
 
-	"github.com/chainkorea/open-callisto-pool/rpc"
-	"github.com/chainkorea/open-callisto-pool/storage"
-	"github.com/chainkorea/open-callisto-pool/util"
+	"github.com/duyk16/open-roller-pool/rpc"
+	"github.com/duyk16/open-roller-pool/storage"
+	"github.com/duyk16/open-roller-pool/util"
 )
 
 const txCheckInterval = 5 * time.Second
@@ -30,9 +30,9 @@ type PayoutsConfig struct {
 	GasPrice     string `json:"gasPrice"`
 	AutoGas      bool   `json:"autoGas"`
 	// In Shannon
-	Threshold    int64  `json:"threshold"`
-	BgSave       bool   `json:"bgsave"`
-	ConcurrentTx int    `json:"concurrentTx"`
+	Threshold    int64 `json:"threshold"`
+	BgSave       bool  `json:"bgsave"`
+	ConcurrentTx int   `json:"concurrentTx"`
 }
 
 func (self PayoutsConfig) GasHex() string {

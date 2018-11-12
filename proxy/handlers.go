@@ -1,13 +1,13 @@
 package proxy
 
 import (
+	"errors"
 	"log"
 	"regexp"
 	"strings"
-	"errors"
 
-	"github.com/chainkorea/open-callisto-pool/rpc"
-	"github.com/chainkorea/open-callisto-pool/util"
+	"github.com/duyk16/open-roller-pool/rpc"
+	"github.com/duyk16/open-roller-pool/util"
 )
 
 // Allow only lowercase hexadecimal with 0x prefix
@@ -55,7 +55,7 @@ func (s *ProxyServer) handleTCPSubmitRPC(cs *Session, id string, params []string
 }
 
 func (s *ProxyServer) handleSubmitRPC(cs *Session, login, id string, params []string) (bool, *ErrorReply) {
-	if !workerPattern.MatchString(id){
+	if !workerPattern.MatchString(id) {
 		id = "0"
 	}
 	if len(params) != 3 {
@@ -82,7 +82,6 @@ func (s *ProxyServer) handleSubmitRPC(cs *Session, login, id string, params []st
 		//	When this function finishes, the results is already recorded in the db for valid shares or blocks.
 		exist, validShare := s.processShare(login, id, cs.ip, t, params)
 		ok := s.policy.ApplySharePolicy(cs.ip, !exist && validShare)
-
 
 		// if true,true or true,false
 		if exist {
